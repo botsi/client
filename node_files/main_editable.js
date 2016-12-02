@@ -143,7 +143,7 @@ var define_things = function() {
             inscrit_users(json.names);
             wt.style.display = wc.style.display = 'block';
 
-					console.log('users online has changed' + json.names);
+					console.log('users online has changed' + json.names[0]);
 				} else if (json.type === 'message') { // it's a single message
 			            tf.removeAttribute('disabled'); // let the user write another message
 			            addMessage(json.data.author, json.data.text, json.data.color, new Date(json.data.time));

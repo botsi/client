@@ -124,6 +124,7 @@ var define_things = function() {
         // NOTE: if you're not sure about the JSON structure
         // check the server source code above
         if (json.type === 'color') { // first response from the server with user's color
+				console.log(json.names);
 
             myColor = json.data;
             //status.text(myName + ': ').css('color', myColor);

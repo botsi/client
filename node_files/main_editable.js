@@ -125,9 +125,6 @@ var define_things = function() {
         // check the server source code above
         if (json.type === 'color') { // first response from the server with user's color
 
-            inscrit_users(json.names);
-            wt.style.display = wc.style.display = 'block';
-
             myColor = json.data;
             //status.text(myName + ': ').css('color', myColor);
             tf.removeAttribute('disabled');
@@ -142,6 +139,9 @@ var define_things = function() {
 												 json.data[i].color, new Date(json.data[i].time));
 					}
 				} else if (json.type === 'userupdate') { // users online has changed
+
+            inscrit_users(json.names);
+            wt.style.display = wc.style.display = 'block';
 
 					console.log('users online has changed' + json.names);
 				} else if (json.type === 'message') { // it's a single message

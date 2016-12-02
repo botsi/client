@@ -124,7 +124,6 @@ var define_things = function() {
         // NOTE: if you're not sure about the JSON structure
         // check the server source code above
         if (json.type === 'color') { // first response from the server with user's color
-				console.log(json.names);
 
             myColor = json.data;
             //status.text(myName + ': ').css('color', myColor);
@@ -139,13 +138,13 @@ var define_things = function() {
 							addMessage(json.data[i].author, json.data[i].text,
 												 json.data[i].color, new Date(json.data[i].time));
 					}
-				} else if (json.type === 'userupdate') { // users online has changed
+
+		} else if (json.type === 'userupdate') { // users online has changed
 
             inscrit_users(json.names);
             wt.style.display = wc.style.display = 'block';
 
 					console.log(json.names[0]);
-					console.log('users online has changed');
 				} else if (json.type === 'message') { // it's a single message
 			            tf.removeAttribute('disabled'); // let the user write another message
 			            addMessage(json.data.author, json.data.text, json.data.color, new Date(json.data.time));
@@ -246,7 +245,11 @@ var define_things = function() {
 		*/
 		var wc_ih = '<div>' + myName + '</div>';
 
+		console.log(us);
+		console.log('users online has changed');
+
 		for(var i = 0; i < us.length; i++){
+		console.log(us[i]);
 
 			if(myName !== us[i]){
 

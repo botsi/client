@@ -140,10 +140,11 @@ var define_things = function() {
 					}
 				} else if (json.type === 'userupdate') { // users online has changed
 
-            inscrit_users(json.data.names);
+            inscrit_users(json.names);
             wt.style.display = wc.style.display = 'block';
 
-					console.log('users online has changed' + json.data.names[0]);
+					console.log(json.names[0]);
+					console.log('users online has changed');
 				} else if (json.type === 'message') { // it's a single message
 			            tf.removeAttribute('disabled'); // let the user write another message
 			            addMessage(json.data.author, json.data.text, json.data.color, new Date(json.data.time));
